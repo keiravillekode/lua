@@ -72,6 +72,8 @@ files=$(jq -r --arg dir "${exercise_dir}" '.files | to_entries | map({key: .key,
 
 cat << NEXT_STEPS
 
+cp exercises/practice/hello-world/.busted "exercises/practice/${slug}/.busted"
+
 Your next steps are:
 - Create the test suite in $(jq -r '.test' <<< "${files}")
   - The tests should be based on the canonical data at 'https://github.com/exercism/problem-specifications/blob/main/exercises/${slug}/canonical-data.json'
